@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>출석체크</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./dailyCheck.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <form>
-        <input type="checkbox" id = "Name1" name ="attendance" checked>
-        <label for="Name1">강민성</label>
-        <input type="checkbox" id = "Name2" name ="attendance" checked>
-        <label for="Name2">김영훈</label>
-        <input type="checkbox" id = "Name3" name ="attendance" checked>
-        <label for="Name3">김예나</label>
-        <input type="checkbox" id = "Name4" name ="attendance" checked>
-        <label for="Name4">김유정</label>
-        <input type="checkbox" id = "Name5" name ="attendance" checked>
-        <label for="Name5">김재란</label>
-        <input type="checkbox" id = "Name6" name ="attendance" checked>
-        <label for="Name6">남궁수정</label>
-        <input type="checkbox" id = "Name7" name ="attendance" checked>
-        <label for="Name7">문준영d</label>
-        <input type="checkbox" id = "Name8" name ="attendance" checked>
-        <label for="Name8">박수민</label>
-        <input type="checkbox" id = "Name9" name ="attendance" checked>
-        <label for="Name9">백종민</label>
-        <input type="checkbox" id = "Name10" name ="attendance" checked>
-        <label for="Name10">서승원</label>
-        <input type="checkbox" id = "Name11" name ="attendance" checked>
-        <label for="Name11">신진영</label>
-        <input type="checkbox" id = "Name12" name ="attendance" checked>
-        <label for="Name12">염정호</label>
-        <input type="checkbox" id = "Name13" name ="attendance" checked>
-        <label for="Name13">오성인</label>
-        <input type="checkbox" id = "Name14" name ="attendance" checked>
-        <label for="Name14">이명관</label>
-        <input type="checkbox" id = "Name15" name ="attendance" checked>
-        <label for="Name15">이지우</label>
-        <input type="checkbox" id = "Name16" name ="attendance" checked>
-        <label for="Name16">이혜승</label>
-        <input type="checkbox" id = "Name17" name ="attendance" checked>
-        <label for="Name17">임태욱</label>
-        <input type="checkbox" id = "Name18" name ="attendance" checked>
-        <label for="Name18">정지윤</label>
-        <input type="checkbox" id = "Name19" name ="attendance" checked>
-        <label for="Name19">조민희</label>
-        <input type="checkbox" id = "Name20" name ="attendance" checked>
-        <label for="Name20">조부희</label>
-        <input type="checkbox" id = "Name21" name ="attendance" checked>
-        <label for="Name21">천현승</label>
-        <input type="checkbox" id = "Name22" name ="attendance" checked>
-        <label for="Name22">최대훈</label>
-        <input type="checkbox" id = "Name23" name ="attendance" checked>
-        <label for="Name23">최재인</label>
-        <input type="checkbox" id = "Name24" name ="attendance" checked>
-        <label for="Name24">김동혁</label>
-    </form>
-    div.
+    <div class="container">
+        <div class="row">
+            <div class="blkBo">
+                <img src="./image/칠판.png" class="blkBoImg" alt="칠판">
+            </div>
+            <div class="mong">
+                <button type="button" class="w-btn-neon2">전원 출석 완료</button>
+            </div>
+            <div class="col4">
+                <button type="button" class="w-btn nameBtn">강민성</button>
+                <button type="button" class="w-btn nameBtn">김영훈</button>
+                <button type="button" class="w-btn nameBtn">김예나</button>
+                <button type="button" class="w-btn nameBtn">김유정</button>
+                <button type="button" class="w-btn nameBtn">김재란</button>
+                <button type="button" class="w-btn nameBtn">남궁수정</button>
+            </div>
+            <div class="col4">
+                <button type="button" class="w-btn nameBtn">문준영</button>
+                <button type="button" class="w-btn nameBtn">박수민</button>
+                <button type="button" class="w-btn nameBtn">백종민</button>
+                <button type="button" class="w-btn nameBtn">서승원</button>
+                <button type="button" class="w-btn nameBtn">신진영</button>
+                <button type="button" class="w-btn nameBtn">염정호</button>
+            </div>
+            <div class="col4">
+                <button type="button" class="w-btn nameBtn">오성인</button>
+                <button type="button" class="w-btn nameBtn">이명관</button>
+                <button type="button" class="w-btn nameBtn">이지우</button>
+                <button type="button" class="w-btn nameBtn">이혜승</button>
+                <button type="button" class="w-btn nameBtn">임태욱</button>
+                <button type="button" class="w-btn nameBtn">정지윤</button>
+            </div>
+            <div class="col4">
+                <button type="button" class="w-btn nameBtn">조민희</button>
+                <button type="button" class="w-btn nameBtn">조부희</button>
+                <button type="button" class="w-btn nameBtn">천현승</button>
+                <button type="button" class="w-btn nameBtn">최대훈</button>
+                <button type="button" class="w-btn nameBtn">최재인</button>
+                <button type="button" class="w-btn nameBtn">김동혁</button>
+            </div>
+         
+        </div>
+
+    </div>
+    <div class="attend">총원 24명 출석 <span class="sum">0</span>명 결석 <span class="empty">24</span>명입니다. </div>
 
     <script src="./dailyCheck.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
