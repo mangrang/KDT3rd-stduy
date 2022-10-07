@@ -1,0 +1,106 @@
+body {
+    /* 기본 폰트는 보통 bocy 태그에 작성 */
+    font-family: 'Bungee Spice', cursive;
+}
+
+h1 {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+div {
+    /* 색상 */
+    color: royalblue;
+    /* background-color: pink;
+    background: linear-gradient(yellow, pink);
+    background: linear-gradient(to bottom right, yellow, pink); */
+    background: linear-gradient(45deg, yellow, pink);
+
+    /* 폰트 */
+    /* [font-size] px단위 */
+    /* 1px: 1/96 인치 -> 절대 단위 */
+    font-size: 50px;
+    /* [font-weight] 폰트의 굵기 설정 */
+    /* lighter normal(400) bold(700) bolder  */
+    /* 100 ~ 900 */
+    font-weight: 700;
+
+    /* [font-family] 글씨체 */
+    /* serif sans-serif monospace cursive */
+    /* 여러개 설정시 선언된 순서로 적용함 */
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* 폰트명에 공백이 존재하여 ''로 감싸줌 */
+    /* 영어, 한글 글꼴 다르게 - 한글 없는 폰트를 먼저 -> 한글 폰트 */
+    /* font-family: Georgia, "malgen Gothic"; */
+
+    /* [웹 폰트] */
+    /* : 모든 사용자가 동일한 폰트로 화면을 볼 수 있음 */
+    /* Google Font */
+    
+    /* [font-style] 글자 모양 */
+    /* italic: 필기체 느낌 (보통 이걸 사용하려고 사용함) */
+    /* oblique: 보통 모양의 기울임 */
+    font-style: italic;
+
+    /* 크기 */
+    width: 600px;
+    /* height: 300px; */
+
+    /* 태두리, 경계선 */
+    /* style 지정해야지 width, color 의미 있음 */
+    /* solid dotted dashed inset */
+    /* border-radius 50% 설정시 원형*/
+    /* border-style: dashed;
+    border-width: 10px;
+    border-color: limegreen; */
+
+    /* border 단축 프로퍼티 */
+    /* border: width, style, color 한 번에 설정 */
+    border: 10px solid limegreen;
+
+    /* border-radius: 5px 30px; */
+    /* border-radius: 5px 20px 45px 80px; */
+
+
+    /* 한쪽 모서리만 태두리 생성 */
+    /* border-top: 40px dashed yellow;
+    border-bottom: 10px dotted blue;
+    border-right: 30px inset green;
+    border-left: 20px solid red; */
+    /* border-image: linear-gradient(red, blue) 30; */
+
+    /* 박스 모델 */
+    /* content -> padding -> border -> margin */
+    /* box-sizing: content-box; */
+    box-sizing: border-box;
+    
+    /* margin, padding */
+    /* padding: content와 border 사이의 공간 */
+    /* margin: border 바깥 공간 */
+    /* padding: 20px; */
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    padding-left: 40px;
+    /* margin: 50px; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 40px;
+}
+
+p {
+    font-size: 50px;
+    font-weight: 700;
+    width: 400px;
+    border: 1px solid black;
+    margin-left: 40px;
+
+    text-align: center;
+
+    /* 그림자 */
+    /* box-shadow: xoffset, yoffset, blur, color */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .4);
+    /* text-shadow */
+    text-shadow: 8px 6px 14px blue;
+
+}

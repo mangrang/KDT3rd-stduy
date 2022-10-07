@@ -1,0 +1,15 @@
+p {
+    position: relative;
+    animation: ani 3s ease;
+    background-color: aqua;
+}
+@keyframes ani{
+    from {
+        left: 150%;
+        width: 400%;
+    }
+    to {
+        left: 0px;
+        width: 100%;
+    }
+}

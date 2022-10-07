@@ -1,0 +1,12 @@
+p {
+    color: blue;
+}
+span {
+    color: red;
+}
+
+/* ... */
+
+span {
+    color: brown;
+}

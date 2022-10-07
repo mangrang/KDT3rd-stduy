@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 태그</title>
+</head>
+<body>
+    <h1>가격표</h1>
+    <Table border="1" cellspacing="5" cellpadding="10">
+        <!--<thead>표의 제목</thead>
+        <tbody>표의 내용</tbody>
+        <tfoot>표의 결과</tfoot> -->
+        <tr>
+            <!-- 굵은 글씨 중앙정렬: th 태그 -->
+            <th>메뉴</th>
+            <th>가격</th>
+            <th>비고</th>
+        </tr>
+        <tr>
+            <td>국물떡볶이</td>
+            <td>5000원</td>
+            <td>2인 이상 주문 가능</td>
+        </tr>
+        <tr>
+            <td>치즈떡볶이</td>
+            <td>6000원</td>
+            <td>2인 이상 주문 가능</td>
+        </tr>
+        <tr>
+            <td>오뎅떡볶이</td>
+            <td>5500원</td>
+            <td>2인 이상 주문 가능</td>
+        </tr>
+        <tr>
+            <td>짜장떡볶이</td>
+            <td>6000원</td>
+            <td>2인 이상 주문 가능</td>
+        </tr>
+        
+    </Table>
+    <h1>가격표 New</h1>
+    <table border="1" cellspacing="5" cellpadding="10">
+        <tr>
+            <th>메뉴</th>
+            <th>가격</th>
+            <th>배달</th>
+        </tr>
+        <tr>
+            <td>치즈김밥</td>
+            <td rowspan="2">4500원</td>
+            <td>2인 이상 배달 가능</td>
+        </tr>
+        <tr>
+            <td>참치김밥</td>
+            <td>2인 이상 배달 가능</td>
+        </tr>
+        <tr>
+            <td>충무김밥</td>
+            <td>6000원</td>
+            <td>2인 이상 배달 가능</td>
+        </tr>
+        <tr>
+            <td colspan="3">순대 (품절)</td>
+        </tr>
+    </table>
+    <h1>자리표</h1>
+    <table border="1" cellspacing="0" cellpadding="50" width="100%" style="text-align: center; ">
+        <tr>
+            <td colspan="2">1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td rowspan="2" style="font-size: 50px;">4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <th>6</th>
+            <th style="font-size: 50px;  color: red;">7</th>
+        </tr>
+
+    </table>
+    <h1>자리표2</h1>
+    <table border="1" width="500" height="500" style="text-align: center;">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td rowspan="2">3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td colspan="2">5</td>
+            <td rowspan="2">6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td colspan="2">8</td>
+        </tr>
+    </table>
+</body>
+</html>
