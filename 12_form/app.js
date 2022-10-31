@@ -20,10 +20,27 @@ app.get('/', function (req, res) {
 '여기는 설명입니다'}); // views/index.ejs 파일을 찾아서 클라이언트에게 "응답"
 });
 
+app.get('/practice26', function (req, res) {
+  res.render('practice26'); 
+});
+
+app.get('/practice27', function (req, res) {
+  res.render('practice27'); 
+});
+
+
 app.get('/getForm', function (req, res) {
     // GET 요청은 req.query 객체에 폼 정보가 전달
     console.log(req.query);
     res.render('result', {
+        title: 'GET 요청 폼 결과 확인하기',
+        userInfo: req.query
+    })
+})
+app.get('/result26', function (req, res) {
+    // GET 요청은 req.query 객체에 폼 정보가 전달
+    console.log(req.query);
+    res.render('result26', {
         title: 'GET 요청 폼 결과 확인하기',
         userInfo: req.query
     })
@@ -36,6 +53,15 @@ app.post('/postForm', function (req, res) {
         userInfo: req.body
        })
 })
+app.post('/result27', function (req, res) {
+       // POST 요청은 req.body 객체에 폼 정보가 전달
+       console.log(req.body);
+       res.render('result27', {
+        title: 'POST 요청 성공',
+        userInfo: req.body
+       })
+})
+
 
 
 app.listen(PORT, function () {

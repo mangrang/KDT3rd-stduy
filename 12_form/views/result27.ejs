@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color {
+            background-color: <%= userInfo.colorForm %>
+        }
+    </style>
+</head>
+
+<body>
+    <div>제 이름은 <%= userInfo.nameInput %>입니다</div>
+    <div>저의 성별은 <%= userInfo.genderForm %>이며</div>
+    <div>제 생년월일은 <%= userInfo.year %>년 <%= userInfo.month %>월 <%= userInfo.day %>일 입니다</div>
+    <div>저의 관심사는 <%= userInfo.hobbyForm %>입니다</div>
+    <div class="color"> 제가 좋아하는 색상입니다</div>
+    <div>현재 볼륨은 <%= userInfo.volumeForm %></div>
+</body>
+</html>
