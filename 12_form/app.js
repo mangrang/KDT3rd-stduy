@@ -1,4 +1,5 @@
 const express = require('express');
+const { userInfo } = require('os');
 const app = express();
 const PORT = 8000;
 
@@ -20,11 +21,20 @@ app.get('/', function (req, res) {
 });
 
 app.get('/getForm', function (req, res) {
-    res.send('get 요청 응답 성공')
+    // GET 요청은 req.query 객체에 폼 정보가 전달
+    console.log(req.query);
+    res.render('result', {
+        title: 'GET 요청 폼 결과 확인하기',
+        userInfo: req.query
+    })
 })
 
 app.post('/postForm', function (req, res) {
-    res.send('post 요청 응답 성공')
+       // POST 요청은 req.body 객체에 폼 정보가 전달
+       res.render('result', {
+        title: 'POST 요청 성공',
+        userInfo: req.body
+       })
 })
 
 
