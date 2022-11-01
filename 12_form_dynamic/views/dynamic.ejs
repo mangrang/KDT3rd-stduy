@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+
+    <!-- jquery cdn (for AJAX)-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+      body {
+        background-color: bisque;
+      }
+
+      .result {
+        font-weight: 700;
+        font-size: 24px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <form name="register">
+      <label for="name">이름</label>
+      <input type="text" name="name" id="name" />
+      <br />
+      성별
+      <input type="radio" name="gender" value="m" id="male" /><label for="male"
+        >남자</label
+      >
+      <input type="radio" name="gender" value="f" id="female" /><label
+        for="female"
+        >여자</label
+      >
+      <br />
+
+      <button type="button" onclick="ajaxGet();">ajax get 제출</button>
+      <button type="button" onclick="ajaxPost();">ajax post 제출</button>
+      <button type="button" onclick="axiosGet();">axios get 제출</button>
+      <button type="button" onclick="axiosPost();">axios post 제출</button>
+    </form>
+
+    <div class="result"></div>
+
+    <script>
+      const resultBox = document.querySelector('.result')
+        
+
+      
+      function ajaxGet() {
+        console.log('####### click ajaxGet #######');
+
+        const form = document.forms['register'];
+        console.dir(form);
+        console.dir(form.name); // input:text
+        console.dir(form.gender); // input:radio
+        console.dir(form.name.value);
+        console.dir(form.gender.value);
+        
+        const data = {
+            name: form.name.value,
+            gender: form.gender.value
+        }
+
+        // AJAX 비동기 동선 - GET/ ajax 요청 보내기
+        $.ajax ({
+                type: 'GET', // 요청 종류
+                url: '/ajax',
+                data: data, // 보낼 데이터
+                success: function (data) {
+                    console.log('ajax Get: ', data);
+                    resultBox.textContent = `GET / ajax 요청 완료! ${data.name}님은 ${data.gender}입니다`
+                    resultBox.style.color = 'blue'
+                },
+        });
+      }   
+      
+      function ajaxPost() {
+        console.log('####### click ajaxPost #######');
+
+        const form = document.forms['register']
+
+        //폼 요소값 확인하기
+        console.dir(form);
+        console.dir(form.name); // input:text
+        console.dir(form.gender); // input:radio
+        console.dir(form.name.value);
+        console.dir(form.gender.value);
+
+        const data = {
+            name: form.name.value,
+            gender: form.gender.value
+        }
+
+        // AJAX 비동기 통신 - POST / ajax 요청 보내기
+        $.ajax ({
+            type: 'POST',
+            url: '/ajax',
+            data: data,
+            success: function (data){
+                console.log(data);
+                resultBox.textContent = `POST / ajax 요청 완료! ${data.name}님은 ${data.gender}입니다`
+                resultBox.style.color = 'red'
+            }
+        })
+      }
+      
+      function axiosGet() {
+        console.log('############### click axios Get');
+
+        const form = document.forms['register']
+        const data = {
+            name: form.name.value,
+            gender: form.gender.value,
+        };
+
+        // AXIOS 비동기 동선 - GET 요청
+        axios({
+            method: 'GET', // 대문자 소문자 모두 가능하나 대문자가 관례
+            url: '/axios',
+            params: data, // GET 요청은 params에 정보를 실어서 보내야함
+        }).then(function (response) {
+            // axios는 promise를 반환한다!!
+            console.log(response);
+            console.log(response.data);
+            console.log(response.data.name);
+            console.log(response.data.gender);
+
+            resultBox.textContent = `GET / axios 요청 완료! ${data.name}님은 ${data.gender}입니다`
+            resultBox.style.color = 'green'
+        });
+
+      }
+
+      function axiosPost() {
+        console.log('############### click axios Post');
+      }
+    </script>
+  </body>
+</html>

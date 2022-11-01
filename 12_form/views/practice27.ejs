@@ -4,45 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>실습27</title>
 </head>
 <body>
     <form action="/result27" name="loginForm" method="post">
         <label for="nameInput">이름</label>
-        <input type="text" name="nameInput">
+        <input type="text" name="nameInput" id="nameInput" required>
         <br>
         
         <fieldset>
             <legend>성별</legend>
-            <input type="radio" name="genderForm" value="male">남자
-            <input type="radio" name="genderForm" value="female">여자
+            <input type="radio" name="genderForm" value="남자" id="male" required><label for="male">남자</label>
+            <input type="radio" name="genderForm" value="여자" id="female"><label for="female">여자</label>
         </fieldset>
         <br>
         <fieldset>
             <legend>생년월일</legend>
-            <select name="year" id="year">
-                <% for(var i = 1; i < 50; i++){ %>
-                    <option value=<%= 2010 - i %>><%= 2010 - i %></option>
-                   <% } %>
-            </select>년
-            <select name="month" id="month">
-                <% for(var i = 1; i < 13; i++){ %>
-                    <option value=<%= i %>><%= i %></option>
-                   <% } %>
-            </select>월
-            <select name="day" id="day">
-                <% for(var i = 1; i < 32; i++){ %>
-                    <option value=<%= i %>><%= i %></option>
-                   <% } %>
-            </select>일
+            <select name="year" id="birthYear">
+                <% for(var i=1; i < 50; i++){ %>
+                    <option value=<%=2010 - i %>><%= 2010 - i %>
+                    </option>
+                <% } %>
+            </select>
+            <label for="birthYear">년</label>
+            <select name="month" id="birthMonth">
+                <% for(var i=1; i < 13; i++){ %>
+                    <option value=<%=i %>><%= i %>
+                    </option>
+                <% } %>
+            </select>
+            <label for="birthMonth">월</label>
+            <select name="day" id="birthDay">
+                <% for(var i=1; i < 32; i++){ %>
+                    <option value=<%=i %>><%= i %>
+                    </option>
+                <% } %>
+            </select>
+            <label for="birthDay">일</label>
 
         </fieldset>
         <br>
         <fieldset>
             <legend>관심사</legend>
-            <label><input type="checkbox" name="hobbyForm" value="여행">여행</label>
-            <label><input type="checkbox" name="hobbyForm" value="패션">패션</label>
-            <label><input type="checkbox" name="hobbyForm" value="음식">음식</label>
+            <input type="checkbox" name="hobbyForm" value="여행" id="travel"><label for="travel">여행</label>
+            <input type="checkbox" name="hobbyForm" value="패션" id="fashion"><label for="fashion">패션</label>
+            <input type="checkbox" name="hobbyForm" value="음식" id="food"><label for="food">음식</label>
         </fieldset>
         <br>
         <fieldset>
