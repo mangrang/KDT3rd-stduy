@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>실습27</title>
+    
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
+    <h2>실습29. axios 회원가입 완료하기</h2>
     <form action="/result27" name="loginForm" method="post">
         <label for="nameInput">이름</label>
         <input type="text" name="nameInput" id="nameInput" required>
@@ -60,7 +65,68 @@
 
         
         <br>
-        <button type="submit">회원가입</button>
+        <button type="button" onclick="signup();">회원가입</button>
     </form>
+    <br>
+    <div class="resultBox"></div>
+
+    <hr>
+    <h2>실습30. axios 로그인 완료하기</h2>
+
+    <form name="joinForm">
+        <label for="id">아이디</label><input type="text" name="id">
+        <label for="pw">비밀번호</label><input type="password" name="pw">
+        <button type="button" onclick="siginin();">로그인</button>
+    </form>
+
+    <div class="resultDiv"></div>
+
+    <script>
+        const resultBox = document.querySelector('.resultBox')
+        const resultDiv = document.querySelector('.resultDiv')
+        function signup() {
+        console.log('####### click axiosGet #######');
+
+        const form = document.forms['loginForm'];
+        const data = {
+          name: form.nameInput.value,
+        };
+
+        // AXIOS 비동기 통신 - GET /axios 요청
+        axios({
+          method: 'GET',
+          url: '/name',
+          params: data, // GET 요청은 "params"에 정보를 실어서 보내야 됨
+        }).then(function (response) {
+          // axios는 promise를 반환한다!! -> then 메서드 사용
+          console.log(response); // 서버의 응답결과
+          console.log(response.data); // res.send(req.query)
+          console.log(response.data.name);
+
+          resultBox.textContent = `${response.data.name}님 환영합니다! 가입이 완료되었습니다.🎉`;
+          resultBox.style.color = 'blue';
+        });
+      }
+
+      function siginin () {
+        const form = document.forms['joinForm']
+        const data1 = {
+            id: form.id.value,
+            pw: form.pw.value,
+        }
+
+        axios({
+            method: 'POST',
+            url: '/login',
+            data: data1,
+        }).then(function(response){
+            console.log(response);
+            resultDiv.textContent = response.data.text;
+            resultDiv.style.color = response.data.color;
+        })
+      }
+
+
+    </script>
 </body>
 </html>

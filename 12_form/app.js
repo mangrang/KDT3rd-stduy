@@ -11,6 +11,10 @@ app.use('/views', express.static(__dirname + '/views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // json 형태로 데이터를 전달받음
 
+
+const realId = 'mara';
+const realPw = '1234';
+
 // Routing - 경로 설정
 // - req(request) : 요청 (클라이언트 -> 서버)
 // - res(response) : 응답 (서버 -> 클라이언트)
@@ -53,16 +57,37 @@ app.post('/postForm', function (req, res) {
         userInfo: req.body
        })
 })
-app.post('/result27', function (req, res) {
-       // POST 요청은 req.body 객체에 폼 정보가 전달
-       console.log(req.body);
-       res.render('result27', {
-        title: 'POST 요청 성공',
-        userInfo: req.body
-       })
+// app.post('/result27', function (req, res) {
+//        // POST 요청은 req.body 객체에 폼 정보가 전달
+//        console.log(req.body);
+//        res.render('result27', {
+//         title: 'POST 요청 성공',
+//         userInfo: req.body
+//        })
+// })
+
+app.get('/name', function(req, res){
+  console.log(req.query);
+  res.send(req.query)
 })
 
-
+app.post('/login', function(req, res){
+  console.log(req.body.id);
+  if (req.body.id == realId & req.body.pw == realPw){
+    content = {
+    text : 'mara님! 로그인 성공😁',
+    color : 'blue',
+    }
+    res.send(content);
+  } else {
+    
+    content = {
+      text : '아이디 또는 패스워드 오류😥',
+      color : 'red',
+      }
+    res.send(content);
+  }
+})
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);

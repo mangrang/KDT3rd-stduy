@@ -24,13 +24,30 @@ app.post('/ajax', function (req, res){
 })
 
 // 2. axios
-
+// GET /axios
 app.get('/axios', function (req, res) {
   console.log(req.query);
-  res.send(req.query)
+  res.send(req.query);
+})
+
+//POST /axios
+app.post('/axios', function (req, res) {
+  console.log(req.body);
+  res.send(req.body);
 })
 
 
+// 3. fetch
+
+app.get('/fetch', function (req, res) {
+  console.log(req.query);
+  res.send(req.query);
+})
+
+app.post('/fetch', function (req, res) {
+  console.log(req.body);
+  res.send(req.body)
+})
 app.listen(PORT, function() {
   console.log(`http://localhost:${PORT}`);
 });
