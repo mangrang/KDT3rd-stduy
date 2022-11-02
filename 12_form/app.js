@@ -73,20 +73,19 @@ app.get('/name', function(req, res){
 
 app.post('/login', function(req, res){
   console.log(req.body.id);
-  if (req.body.id == realId & req.body.pw == realPw){
+  if (req.body.id == realId && req.body.pw == realPw){
     content = {
-    text : 'mara님! 로그인 성공😁',
-    color : 'blue',
+      userInfo: req.body,
+      text : `${req.body.id}님! 로그인 성공😁`,
+      color : 'blue',
     }
-    res.send(content);
   } else {
-    
     content = {
       text : '아이디 또는 패스워드 오류😥',
       color : 'red',
       }
-    res.send(content);
   }
+  res.send(content);
 })
 
 app.listen(PORT, function () {

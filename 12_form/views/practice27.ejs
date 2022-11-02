@@ -74,8 +74,8 @@
     <h2>실습30. axios 로그인 완료하기</h2>
 
     <form name="joinForm">
-        <label for="id">아이디</label><input type="text" name="id">
-        <label for="pw">비밀번호</label><input type="password" name="pw">
+        <label for="id">아이디</label><input type="text" name="id" required />
+        <label for="pw">비밀번호</label><input type="password" name="pw" required />
         <button type="button" onclick="siginin();">로그인</button>
     </form>
 
@@ -115,16 +115,24 @@
             pw: form.pw.value,
         }
 
+        
+        console.log();
+        if (form.id.checkValidity() && form.pw.checkValidity()){
         axios({
             method: 'POST',
             url: '/login',
             data: data1,
         }).then(function(response){
             console.log(response);
-            resultDiv.textContent = response.data.text;
-            resultDiv.style.color = response.data.color;
+            console.log(response.data); // {text: '아이디 또는 패스워드 오류😥', color: 'red'}
+            resultDiv.textContent = response.data.text; // '아이디 또는 패스워드 오류😥'
+            resultDiv.style.color = response.data.color; // 'red'
         })
+      } else {
+        resultDiv.textContent = '아이디 또는 패스워드를 입력해주세요'
+        resultDiv.style.color = 'green'
       }
+    }
 
 
     </script>
