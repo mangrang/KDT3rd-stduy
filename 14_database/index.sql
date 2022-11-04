@@ -191,4 +191,51 @@ UPDATE user SET address = '제주특별자치도 제주시', name = '이지현' 
 -- delete에서는 where절이 항상 따라다님
 DELETE FROM user WHERE id = 11;
 DELETE FROM user WHERE id > 8;
-sdad
+
+CREATE TABLE user (
+    id VARCHAR(10) NOT NULL PRIMARY KEY,
+    pw VARCHAR(20) NOT NULL,
+    name VARCHAR(5) NOT NULL,
+    gender ENUM('F','M', '') DEFAULT '',
+    birthday DATE NOT NULL,
+    age INT(3) NOT NULL DEFAULT 0
+);
+
+
+INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('homg1234', '8o4bkg', '홍길동', 'M', '1990-01-31', 33);
+INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('sexysung', '87awjkdf', '성춘향', 'F', '1992-03-31', 31);
+INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('power70', 'qxur8sda', '변사또', 'M', '1970-05-02', 53);
+INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('hanjo', 'jk48fn4', '한조', 'M', '1984-10-18', 39);
+INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('widowmaker', '38ewifh3', '위도우', 'F', '1976-06-27', 47);
+INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('dvadva', 'k3f3ah', '송하나', 'F', '2001-06-03', 22);
+INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('jungkrat', '4ifha7f', '정크랫', 'M', '1999-11-11', 24);
+
+SELECT * FROM user ORDER BY birthday DESC; -- birthday 오름차순
+
+SELECT * FROM user WHERE gender = 'M' ORDER BY name ASC;
+
+SELECT id name FROM user WHERE birthday LIKE '1990%';
+
+SELECT * FROM user WHERE birthday LIKE '%-06-%' ORDER BY birthday DESC;
+
+SELECT * FROM user WHERE gender = "M" and birthday LIKE '1970%';
+
+SELECT * FROM user ORDER BY 'age' LIMIT 3;
+
+SELECT * FROM user WHERE age >= 25 and age <= 50;
+
+UPDATE user SET pw = '12345678' WHERE id = 'hong1234'
+
+SELECT * FROM user;
+
+DELETE FROM user WHERE id = 'jungkrat';
+
+
+-- ##########################################################
+
+-- DCL
+-- Data Control Language: 데이터 제어어
+-- 데이터베이스에 접근해 읽거나 쓰는 것을 제한할 수 있는 권한 부여/박탈
+
+-- GRANT: 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 "권한 부여"
+-- REVOKE: 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 "권한 박탈"
