@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <style>
       body {
         background-color: beige;
         padding-bottom: 1000px;
       }
+
     </style>
   </head>
   <body>
@@ -41,7 +45,47 @@
       <button type="submit">업로드</button>
     </form>
 
-    <a href="/practice">실습31</a>
-  
+    <h2>동적파일 업로드</h2>
+    <input type="file" name="dynamicFile" id="dynamicFile" /><br />
+    <button type="button" onclick="fileUpload()">업로드</button>
+    <img alt="">
+
+
+
+
+
+    <script>
+      function fileUpload() {
+        console.log('click fileupload');
+
+        const formData = new FormData(); // 폼 객체 생성
+        const file = document.getElementById('dynamicFile'); // file input
+        
+        console.dir(file); // file input
+        console.dir(file.files[0]); // file input에 들어간 파일 정보
+
+        // formData.append(name, value);
+        // - input의 name과 input의 value
+        formData.append('dynamicFile', file.files[0]);
+
+        // axios 통신
+        axios({
+          method: 'POST',
+          url: '/dynamicFile',
+          data: formData,
+          headers: {
+            'Content-Type': 'multipart/form-data', // 'enctype' : "multipart/form-data"
+          },
+        }).then(function (response) {
+          // response: 클라이언트가 POST /dynamicFile 요청을 보낸 응답 결과
+          console.log(response);
+          console.log(response.data);
+          console.log(response.data.path);
+
+          let axiosImage = document.querySelector('img');
+          axiosImage.setAttribute('src', response.data.path)
+        });
+      }
+    </script>
   </body>
 </html>
