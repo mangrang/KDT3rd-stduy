@@ -6,12 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>댓글 목록 보기</title>
-  <style>
-    li > a {
-      text-decoration: none;
-      color: black;
-    }
-  </style>
+
 </head>
 
 <body>
@@ -20,7 +15,7 @@
   <!-- 전체 댓글 목록 (4개) 보이기 -->
   <ul>
     <% for (let i = 0; i < commentInfos.length; i++) { %>
-    <li><a href="/comment/<%=commentInfos[i].id %>"><%=commentInfos[i].userid %> - <%= commentInfos[i].comments %></a></li>  
+    <li><a href="/comment/<%=commentInfos[i].id %>"><%=commentInfos[i].userid %> - <%= commentInfos[i].comment %></a></li>  
     <!-- 배열의 0번째 요소 = commentInfos 요소의 id = 1 -->
     <% } %>
     </ul>
