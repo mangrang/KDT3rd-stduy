@@ -27,6 +27,8 @@ DESC visitor;
 -- 방명록(visitor) 테이블 데이터 추가
 INSERT INTO visitor (name, comment) VALUES ('홍길동', '내가 왔다.');
 INSERT INTO visitor (name, comment) VALUES ('이찬혁', '으라차차');
+INSERT INTO visitor (name, comment) VALUES ('이수현', '가가가');
+INSERT INTO visitor (name, comment) VALUES ('아이유', '하하하');
 
 -- 방명록(visitor) 테이블 정보 확인
 SELECT * FROM visitor;
@@ -42,8 +44,13 @@ FLUSH PRIVILEGES;
 -- 비밀번호 변경하고 싶다면?
 ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY '1234';
 
-INSERT INTO visitor (name, comment) VALUES ('김영훈', '안녕하세요');
 
 UPDATE visitor SET name = '김예나' WHERE id = 3;
 
-DELETE FROM visitor WHERE id = '2';
+DELETE FROM visitor WHERE id = '3';
+
+SELECT * FROM visitor WHERE id = 1; -- one
+
+
+-- 테이블 데이터 수정 (update)
+UPDATE visitor SET name = '누구', comment = '아무말' WHERE id =1 ;

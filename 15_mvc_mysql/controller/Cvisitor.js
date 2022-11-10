@@ -16,6 +16,16 @@ exports.getVisitors = (req, res) => {
   });
 };
 
+exports.getVisitor = (req, res) => {
+    console.log(req.query); // {id: '1'}
+    console.log(req.query.id); // '1'
+
+    Visitor.getVisitor(req.query.id, (result) => {
+        console.log('Cvisitor.js', result);
+        res.send(result)
+    } )
+}
+
 exports.postVisitor = (req, res) => {
   console.log(req.body);
 
@@ -29,6 +39,15 @@ exports.postVisitor = (req, res) => {
   });
 };
 
+exports.patchVisitor = (req, res) => {
+    // res: 요청 (response)
+    // req: 응답 (request)
+    console.log(req.body);
+    Visitor.patchVisitor(req.body, (result) => {
+        console.log('Cvisitor:', result);
+        res.send('수정 성공');
+    })
+}
 exports.deleteVisitor = (req, res) => {
   console.log(req.body);
   console.log(req.body.id);
