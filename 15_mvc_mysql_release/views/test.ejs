@@ -32,7 +32,7 @@
     <label for="name">Name</label>
     <input id="name_<%= i %>" type="text" name="name" value="<%= data[i].name %>" required /><br />
     <button type="button" onclick="profileEdit(this,'<%= data[i].id %>');">Edit</button>
-    <button type="button" onclick="profileDelete('<%= i %>');">Delete</button>
+    <button type="button" onclick="profileDelete(this,'<%= data[i].id %>');">Delete</button>
   </form>
   <br>
   <% } %>
