@@ -1,0 +1,17 @@
+.box {
+
+
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.box div {
+    border-style: solid;
+    width: 20vw;
+    height: 5vh;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
